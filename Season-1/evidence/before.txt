@@ -1,0 +1,106 @@
+]633;E;for n in 1 3 4;8ee76f3e-e6cb-4a55-ae87-05b659b77828]633;C.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK
+FFF
+======================================================================
+FAIL: test_6 (__main__.TestOnlineStore.test_6)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/secure-code-game/Season-1/Level-1/hack.py", line 12, in test_6
+    self.assertEqual(c.validorder(order_4), 'Order ID: 4 - Payment imbalance: $-1000.00')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'Order ID: 4 - Full payment received!' != 'Order ID: 4 - Payment imbalance: $-1000.00'
+- Order ID: 4 - Full payment received!
++ Order ID: 4 - Payment imbalance: $-1000.00
+
+
+======================================================================
+FAIL: test_7 (__main__.TestOnlineStore.test_7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/secure-code-game/Season-1/Level-1/hack.py", line 20, in test_7
+    self.assertEqual(c.validorder(order_5), 'Order ID: 5 - Full payment received!')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'Order ID: 5 - Payment imbalance: $0.00' != 'Order ID: 5 - Full payment received!'
+- Order ID: 5 - Payment imbalance: $0.00
++ Order ID: 5 - Full payment received!
+
+
+======================================================================
+FAIL: test_8 (__main__.TestOnlineStore.test_8)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/secure-code-game/Season-1/Level-1/hack.py", line 29, in test_8
+    self.assertEqual(c.validorder(order_1), 'Total amount payable for an order exceeded')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'Order ID: 1 - Full payment received!' != 'Total amount payable for an order exceeded'
+- Order ID: 1 - Full payment received!
++ Total amount payable for an order exceeded
+
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (failures=3)
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
+FF
+======================================================================
+FAIL: test_1 (__main__.TestTaxPayer.test_1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/secure-code-game/Season-1/Level-3/hack.py", line 16, in test_1
+    self.assertIsNone(output)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^
+AssertionError: '/etc/passwd' is not None
+
+======================================================================
+FAIL: test_2 (__main__.TestTaxPayer.test_2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/secure-code-game/Season-1/Level-3/hack.py", line 31, in test_2
+    self.assertIsNone(output)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^
+AssertionError: '/workspaces/secure-code-game/Season-1/Level-3/./../../../../../etc/passwd' is not None
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (failures=2)
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.013s
+
+OK
+F
+======================================================================
+FAIL: test_1 (__main__.TestDatabase.test_1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspaces/secure-code-game/Season-1/Level-4/hack.py", line 45, in test_1
+    self.assertEqual(developer_output_expectation, what_hacker_passes)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "[MET[80 chars]MSFT'\n[RESULT] (300.0,)\n" != "[MET[80 chars]MSFT'; UPDATE stocks SET price = '525' WHERE s[35 chars]N]\n"
+  [METHOD EXECUTED] get_stock_price
+- [QUERY] SELECT price FROM stocks WHERE symbol = 'MSFT'
+- [RESULT] (300.0,)
++ [QUERY] SELECT price FROM stocks WHERE symbol = 'MSFT'; UPDATE stocks SET price = '525' WHERE symbol = 'MSFT'--'
++ [SCRIPT EXECUTION]
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.006s
+
+FAILED (failures=1)
+Level 2 
+
+0. Non-admin (admin:0) username called 'pwned' has been created 
+1. A dummy setting has been set to dummy number '1' 
+2. Making sure user 'pwned' is not an admin by performing a check -> [Result] Admin:1 
+
+<SOS> PRIVILEGE ESCALATION ATTACK DETECTED

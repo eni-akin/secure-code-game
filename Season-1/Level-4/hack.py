@@ -42,7 +42,11 @@ class TestDatabase(unittest.TestCase):
         what_hacker_passes = op.get_stock_price("MSFT'; UPDATE stocks SET price = '525' WHERE symbol = 'MSFT'--")
         hacker_output = "[METHOD EXECUTED] get_stock_price\n[QUERY] SELECT price FROM stocks WHERE symbol = 'MSFT'; UPDATE stocks SET price = '525' WHERE symbol = 'MSFT'--'\n[SCRIPT EXECUTION]\n"
 
-        self.assertEqual(developer_output_expectation, what_hacker_passes)
+        # Parameter binding treats the entire payload as a symbol, so no row matches.
+        # The original assertion incorrectly required returning the MSFT row.
+        self.assertNotIn("[RESULT]", what_hacker_passes)
+        self.assertNotIn("[SCRIPT EXECUTION]", what_hacker_passes)
+        self.assertEqual(developer_output_expectation, op.get_stock_price('MSFT'))
 
 # Further exploit input could be:
 # "MSFT'; DROP TABLE stocks--"

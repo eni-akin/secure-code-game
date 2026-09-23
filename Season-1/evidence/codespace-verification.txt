@@ -1,0 +1,97 @@
+
+=== LEVEL 1 ===
+test_1 (__main__.TestOnlineStore.test_1) ... ok
+test_2 (__main__.TestOnlineStore.test_2) ... ok
+test_3 (__main__.TestOnlineStore.test_3) ... ok
+test_4 (__main__.TestOnlineStore.test_4) ... ok
+test_5 (__main__.TestOnlineStore.test_5) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK
+test_6 (__main__.TestOnlineStore.test_6) ... ok
+test_7 (__main__.TestOnlineStore.test_7) ... ok
+test_8 (__main__.TestOnlineStore.test_8) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK
+PASS: LEVEL 1
+
+=== LEVEL 2 ===
+Level 2 
+
+0. Non-admin (admin:0) username called 'pwned' has been created 
+
+1. Non-admin users like 'pwned' can update some dummy numerical settings 
+2. Non-admin users have no access to settings that can escalate themselves to admins 
+
+3. Dummy setting '1' has been now set to dummy number '10' for user 'pwned' 
+4. Making sure user 'pwned' is not an admin by performing a check -> [Result] Admin:0 
+
+User is not an admin so the code works as expected... is it though? 
+Level 2 
+
+0. Non-admin (admin:0) username called 'pwned' has been created 
+1. A dummy setting has been set to dummy number '1' 
+2. Making sure user 'pwned' is not an admin by performing a check -> [Result] Admin:0 
+
+CONGRATULATIONS LEVEL 2 PASSED!
+PASS: Level 2 bounds, numeric parsing, account capacity, and privilege checks
+invalid user idinvalid user idthe username is too longthe maximum number of users have been exceededPASS: LEVEL 2
+
+=== LEVEL 3 ===
+test_1 (__main__.TestTaxPayer.test_1) ... ok
+test_2 (__main__.TestTaxPayer.test_2) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
+test_1 (__main__.TestTaxPayer.test_1) ... ok
+test_2 (__main__.TestTaxPayer.test_2) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
+PASS: LEVEL 3
+
+=== LEVEL 4 ===
+test_1 (__main__.TestDatabase.test_1) ... ok
+test_2 (__main__.TestDatabase.test_2) ... ok
+test_3 (__main__.TestDatabase.test_3) ... ok
+test_4 (__main__.TestDatabase.test_4) ... ok
+test_5 (__main__.TestDatabase.test_5) ... ok
+test_6 (__main__.TestDatabase.test_6) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.014s
+
+OK
+test_1 (__main__.TestDatabase.test_1) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.004s
+
+OK
+PASS: LEVEL 4
+
+=== LEVEL 5 ===
+test_1 (__main__.TestCrypto.test_1) ... ok
+test_2 (__main__.TestCrypto.test_2) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 1.092s
+
+OK
+Level 5 hack.py is intentionally inactive; use CodeQL and security_checks.py.
+PASS: LEVEL 5
+PASS: Level 1 invalid quantities and nonfinite amounts rejected
+PASS: Level 3 absolute, sibling-prefix, and symlink escapes blocked
+PASS: Level 4 every database entry point preserves data under attack
+PASS: Level 5 salted bcrypt and incorrect-password rejection
+
+ALL FIVE LEVELS: functional and active exploit checks PASS

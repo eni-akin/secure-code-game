@@ -1,36 +1,40 @@
-name: "CodeQL Analysis"
-
+name: CodeQL Analysis
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
-
+  workflow_dispatch:
 jobs:
   analyze:
-    name: Analyze
+    name: Analyze Season 1
     runs-on: ubuntu-latest
     permissions:
       actions: read
       contents: read
       security-events: write
-
     strategy:
       fail-fast: false
       matrix:
-        language: ['python', 'go', 'javascript']
-
+        language: [python, c-cpp]
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v7
-
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v4.37.3
+      - uses: actions/checkout@v4
+      - uses: github/codeql-action/init@v4.37.3
         with:
           languages: ${{ matrix.language }}
-
-      - name: Autobuild
-        uses: github/codeql-action/autobuild@v4.37.3
-
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v4.37.3
+          build-mode: ${{ matrix.language == 'c-cpp' && 'manual' || 'none' }}
+          config: |
+            name: Season 1 implementation
+            paths:
+              - Season-1
+            paths-ignore:
+              - '**/solution.*'
+              - '**/hack.*'
+              - '**/tests.*'
+              - '**/security_checks.*'
+              - '**/verify.py'
+            queries:
+              - uses: security-extended
+      - if: matrix.language == 'c-cpp'
+        run: gcc -Wall -Wextra Season-1/Level-2/security_checks.c -o /tmp/season1-c
+      - uses: github/codeql-action/analyze@v4.37.3
