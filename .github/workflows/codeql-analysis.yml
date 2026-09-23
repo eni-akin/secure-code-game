@@ -19,7 +19,7 @@ jobs:
         language: [python, c-cpp]
     steps:
       - uses: actions/checkout@v4
-      - uses: github/codeql-action/init@v4.37.3
+      - uses: github/codeql-action/init@v4.38.1
         with:
           languages: ${{ matrix.language }}
           build-mode: ${{ matrix.language == 'c-cpp' && 'manual' || 'none' }}
@@ -37,4 +37,4 @@ jobs:
               - uses: security-extended
       - if: matrix.language == 'c-cpp'
         run: gcc -Wall -Wextra Season-1/Level-2/security_checks.c -o /tmp/season1-c
-      - uses: github/codeql-action/analyze@v4.37.3
+      - uses: github/codeql-action/analyze@v4.38.1
